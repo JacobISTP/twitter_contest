@@ -1,0 +1,27 @@
+#loadPanel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  background-color: black;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loadImg {
+  width: 75px;
+  height: 75px;
+  animation: loadImgAction 2s infinite ease-in-out;
+}
+@keyframes loadImgAction {
+  20% {
+    transform: scale(120%) translateY(-20%);
+  }
+  40% {
+    transform: scale(100%) translateY(0%);
+  }
+}

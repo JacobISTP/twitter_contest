@@ -1,0 +1,102 @@
+#home {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 55fr 45fr;
+  grid-template-rows: 95fr 5fr;
+
+  background-color: black;
+  color: #d8d8d9;
+}
+
+#homeLogo {
+  background-image: url("../img/home.jpg");
+  background-position: center;
+  background-size: cover;
+
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+#homeContent {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  display: flex;
+}
+#homeContent > div {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  padding-left: 35px;
+}
+#homeContent h1 {
+  font-size: 65px;
+  margin: 0;
+  margin-top: 70px;
+  letter-spacing: -2px;
+  margin-bottom: 50px;
+}
+#homeContent h3 {
+  font-size: 30px;
+  margin: 0;
+  margin-bottom: 20px;
+}
+#loginform {
+  display: flex;
+  flex-direction: column;
+}
+.loginbtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 300px;
+  height: 40px;
+  margin-top: 15px;
+
+  border-radius: 20px;
+  border: none;
+
+  font-size: 15px;
+  font-weight: bold;
+
+  background-color: white;
+
+  cursor: pointer;
+}
+.loginBtnImage {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+#loginFormMessage {
+  width: 380px;
+  color: var(--lightgray);
+  margin-top: 25px;
+  margin-bottom: 30px;
+  font-size: 13px;
+}
+#loginFormMessage > span {
+  color: #1a83d2;
+}
+#gotologin {
+  font-size: 15px;
+}
+#gotologin a {
+  color: #1a83d2;
+  text-decoration: none;
+}
+#home > footer {
+  grid-column: 1/-1;
+  grid-row: 2/3;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 13px;
+  font-weight: 500;
+}
+#home > footer > span {
+  margin: 2px 8px;
+  color: var(--lightgray);
+}
