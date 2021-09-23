@@ -1,6 +1,7 @@
 @import url("./variables.css");
 @import url("./load.css");
 @import url("./home.css");
+@import url("./login.css");
 * {
   box-sizing: border-box;
 }

@@ -84,6 +84,16 @@
 #gotologin a {
   color: #1a83d2;
   text-decoration: none;
+  animation: loginBlink 2s infinite ease-in-out;
+  animation-delay: 5s;
+}
+@keyframes loginBlink {
+  25% {
+    opacity: 50%;
+  }
+  50% {
+    opacity: 100%;
+  }
 }
 #home > footer {
   grid-column: 1/-1;
