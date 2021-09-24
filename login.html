@@ -4,19 +4,21 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>로그인/투위터</title>
+    <title>로그인 / 투위터</title>
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="shortcut icon" href="img/twitter.ico" type="image/x-icon" />
   </head>
   <body class="loginBody">
-    <form action="" id="login">
-      <span>로그인</span>
-      <input type="text" required placeholder="Id" />
-      <input type="text" placeholder="No need for password." disabled />
-      <div>
+    <div id="login">
+      <button><a href="index.html">✖</a></button>
+      <form action="main.html">
+        <span>로그인</span>
+        <input type="text" required placeholder="Id" />
+        <input type="text" placeholder="No need for password." disabled />
         <input type="submit" value="Log In" />
-        <button><a href="index.html"> 닫기</a></button>
-      </div>
-    </form>
+      </form>
+    </div>
   </body>
+  <script src="js/load.js"></script>
+  <script src="js/login.js"></script>
 </html>

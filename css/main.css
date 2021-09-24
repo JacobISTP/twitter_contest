@@ -1,0 +1,145 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  background-color: black;
+  color: var(--lightwhite);
+
+  display: flex;
+  justify-content: center;
+}
+#fathergrid {
+  display: grid;
+  width: 1300px;
+  height: 100vh;
+  grid-template-columns: 3fr 10fr;
+  grid-template-rows: 1fr;
+}
+#fathergrid > div:first-child {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  justify-content: space-between;
+}
+.homeLogo {
+  margin-left: 10px;
+  margin-bottom: 5px;
+  padding: 10px;
+  width: fit-content;
+  cursor: pointer;
+}
+.homeLogo:hover {
+  border-radius: 50%;
+  background-color: #031622;
+}
+#maingrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 50px 1fr;
+}
+#titlegrid {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  grid-template-rows: 1fr;
+}
+#contentTitle {
+  border-left: 1px solid var(--darkgray);
+  border-right: 1px solid var(--darkgray);
+  padding: 10px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#searchTweet {
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
+}
+#contentgrid {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  grid-template-rows: 1fr;
+}
+#contentCell1 {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 125px 1fr;
+
+  border: 1px solid var(--darkgray);
+
+  background-color: var(--darkgray);
+  gap: 1px;
+}
+#contentCell1 > div {
+  background-color: black;
+}
+.titleMenuBar {
+  margin: 5px 0;
+  padding: 10px 20px;
+  width: fit-content;
+  height: 50px;
+
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  grid-template-rows: 1fr;
+  align-items: center;
+
+  cursor: pointer;
+  font-size: 20px;
+}
+.titleMenuBar:hover {
+  border-radius: 25px;
+  background-color: rgb(20, 20, 20);
+}
+#sendTweetBtn {
+  height: 54px;
+  border-radius: 27px;
+  background-color: var(--tweetblue);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 15px;
+  margin: 25px 20px 0 0;
+
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+
+  transition: 0.2s ease-in-out;
+}
+#sendTweetBtn:hover {
+  filter: brightness(90%);
+}
+#currentUser {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  grid-template-rows: 1fr;
+  color: var(--lightgray);
+
+  align-items: center;
+}
+#currentUser > svg {
+  margin: 0 10px;
+}
+#currentUser > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#currentUser span {
+  color: var(--lightwhite);
+  font-size: 20px;
+}
+#currentUser a {
+  text-decoration: none;
+  font-size: 25px;
+}
+
+#currentUser a:visited {
+  color: var(--lightgray);
+}
+#currentUser a:hover {
+  color: tomato;
+}

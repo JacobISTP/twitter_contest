@@ -9,6 +9,7 @@
   align-items: center;
 }
 #login {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,6 +19,11 @@
   border-radius: 3px;
   background-color: var(--lightgray);
   font-size: 14px;
+}
+#login form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 #login span {
   font-size: 20px;
@@ -37,15 +43,28 @@
   background-color: #1a83d2;
   color: #d8d8d9;
   border: none;
-  margin: 0;
-  margin-right: 15px;
 }
-#login > div {
+#login button {
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
+  top: 0;
+  right: 0;
+  padding: 1px 4px;
+  border: none;
 }
-#login > div a {
+#login a {
   text-decoration: none;
+}
+#login button:hover {
+  animation: cancelBtn 1s infinite ease-in-out;
+}
+@keyframes cancelBtn {
+  50% {
+    transform: scale(125%);
+  }
+  100% {
+    transform: scale(100%);
+  }
 }

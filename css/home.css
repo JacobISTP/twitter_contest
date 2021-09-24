@@ -6,7 +6,7 @@
   grid-template-rows: 95fr 5fr;
 
   background-color: black;
-  color: #d8d8d9;
+  color: var(--lightwhite);
 }
 
 #homeLogo {
