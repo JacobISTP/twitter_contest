@@ -13,11 +13,11 @@
     <div id="fathergrid">
       <div>
         <div id="titleMenuContainer">
-          <div class="homeLogo">
+          <div class="homeLogo darkBlueElement">
             <i class="fab fa-twitter fa-2x"></i>
           </div>
           <div id="titleMenu"></div>
-          <div id="sendTweetBtn">트윗하기</div>
+          <div id="sendTweetBtn" class="brightBlueBtn">트윗하기</div>
         </div>
         <div id="currentUser">
           <i class="fas fa-user-circle fa-3x"></i>
@@ -29,15 +29,62 @@
       </div>
       <div id="maingrid">
         <div id="titlegrid">
-          <div id="contentTitle"></div>
-          <div id="searchTweet"></div>
+          <div id="contentTitle">
+            홈
+            <div class="darkergrayElement">
+              <i class="fas fa-splotch"></i>
+            </div>
+          </div>
+          <div id="searchTweet">
+            <div>
+              <i class="fas fa-search"></i>
+              <input type="text" placeholder="트위터 검색" />
+            </div>
+          </div>
         </div>
         <div id="contentgrid">
           <div id="contentCell1">
-            <div id="contentTweet"></div>
+            <div id="contentTweet">
+              <i class="fas fa-user-circle fa-3x"></i>
+              <form action="">
+                <input type="text" placeholder="무슨 일이 일어나고 있나요?" />
+                <div>
+                  <div id="twitIconBar">
+                    <div class="darkBlueElement">
+                      <i class="far fa-image"></i>
+                    </div>
+                    <div class="darkBlueElement">
+                      <i class="fas fa-photo-video"></i>
+                    </div>
+                    <div class="darkBlueElement">
+                      <i class="fas fa-poll-h"></i>
+                    </div>
+                    <div class="darkBlueElement">
+                      <i class="far fa-smile"></i>
+                    </div>
+                    <div class="darkBlueElement">
+                      <i class="far fa-calendar-alt"></i>
+                    </div>
+                  </div>
+                  <input type="submit" value="트윗하기" class="brightBlueBtn" />
+                </div>
+              </form>
+            </div>
             <div id="contentTweeted"></div>
           </div>
-          <div id="contentCell2"></div>
+          <div id="contentCell2">
+            <div class="recommendBox">
+              <span class="recommendTitle">나를 위한 트렌드</span>
+              <ul id="trendForMeList"></ul>
+              <div class="contentMore"><span>더 보기</span></div>
+            </div>
+            <div class="recommendBox">
+              <span class="recommendTitle">팔로우 추천</span>
+              <ul id="recommendFollowList"></ul>
+              <div class="contentMore"><span>더 보기</span></div>
+            </div>
+            <div id="mainFooter"></div>
+          </div>
         </div>
       </div>
     </div>

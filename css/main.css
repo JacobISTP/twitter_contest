@@ -25,54 +25,18 @@ body {
   margin-bottom: 5px;
   padding: 10px;
   width: fit-content;
-  cursor: pointer;
 }
-.homeLogo:hover {
+.darkBlueElement {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.darkBlueElement:hover {
+  cursor: pointer;
   border-radius: 50%;
   background-color: #031622;
 }
-#maingrid {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 50px 1fr;
-}
-#titlegrid {
-  display: grid;
-  grid-template-columns: 3fr 2fr;
-  grid-template-rows: 1fr;
-}
-#contentTitle {
-  border-left: 1px solid var(--darkgray);
-  border-right: 1px solid var(--darkgray);
-  padding: 10px;
 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-#searchTweet {
-  padding-left: 20px;
-  display: flex;
-  align-items: center;
-}
-#contentgrid {
-  display: grid;
-  grid-template-columns: 3fr 2fr;
-  grid-template-rows: 1fr;
-}
-#contentCell1 {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 125px 1fr;
-
-  border: 1px solid var(--darkgray);
-
-  background-color: var(--darkgray);
-  gap: 1px;
-}
-#contentCell1 > div {
-  background-color: black;
-}
 .titleMenuBar {
   margin: 5px 0;
   padding: 10px 20px;
@@ -89,7 +53,7 @@ body {
 }
 .titleMenuBar:hover {
   border-radius: 25px;
-  background-color: rgb(20, 20, 20);
+  background-color: var(--darkergray);
 }
 #sendTweetBtn {
   height: 54px;
@@ -105,23 +69,25 @@ body {
 
   font-size: 18px;
   font-weight: 600;
+}
+.brightBlueBtn {
   cursor: pointer;
 
   transition: 0.2s ease-in-out;
 }
-#sendTweetBtn:hover {
+.brightBlueBtn:hover {
   filter: brightness(90%);
 }
 #currentUser {
   display: grid;
   grid-template-columns: 70px 1fr;
   grid-template-rows: 1fr;
-  color: var(--lightgray);
 
   align-items: center;
 }
 #currentUser > svg {
   margin: 0 10px;
+  color: var(--lightgray);
 }
 #currentUser > div {
   display: flex;
@@ -142,4 +108,217 @@ body {
 }
 #currentUser a:hover {
   color: tomato;
+}
+
+/* maingrid */
+#maingrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 50px 1fr;
+}
+#titlegrid {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  grid-template-rows: 1fr;
+}
+#contentTitle {
+  border-left: 1px solid var(--darkgray);
+  border-right: 1px solid var(--darkgray);
+  padding: 0 10px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  font-size: 20px;
+  font-weight: 700;
+}
+#contentTitle > div {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.darkergrayElement:hover {
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: var(--darkergray);
+}
+#searchTweet {
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
+}
+#searchTweet > div {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 90%;
+
+  padding: 10px 20px;
+  background-color: var(--darkgray);
+  border-radius: 25px;
+}
+#searchTweet > div svg {
+  margin-right: 20px;
+  color: var(--lightgray);
+}
+#searchTweet > div input {
+  width: 90%;
+  background: none;
+  border: none;
+  font-size: 16px;
+  outline: none;
+  color: var(--lightwhite);
+}
+#searchTweet > div:focus-within {
+  background-color: black;
+  border: 1px solid var(--tweetblue);
+}
+
+#searchTweet > div:focus-within > svg {
+  color: var(--tweetblue);
+}
+#contentgrid {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  grid-template-rows: 1fr;
+}
+#contentCell1 {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 125px 1fr;
+
+  border: 1px solid var(--darkgray);
+
+  background-color: var(--darkgray);
+  gap: 1px;
+}
+#contentCell1 > div {
+  background-color: black;
+}
+#contentTweet {
+  padding: 5px 15px;
+  display: flex;
+}
+#contentTweet > svg {
+  color: var(--lightgray);
+}
+#contentTweet > form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: space-between;
+
+  padding: 20px 0 10px 20px;
+}
+#contentTweet > form > input[type="text"] {
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  width: 90%;
+  color: var(--lightwhite);
+}
+#contentTweet > form input[type="submit"] {
+  width: 100px;
+  padding: 8px;
+  border: none;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  background-color: var(--tweetblue);
+  color: var(--lightwhite);
+
+  transition: 0.2s ease-in-out;
+}
+#twitIconBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: var(--darktweetblue);
+}
+#twitIconBar .darkBlueElement {
+  margin-right: 5px;
+  width: 30px;
+  height: 30px;
+}
+#contentTweet > form > div {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  padding: 0 5px;
+}
+#contentCell2 {
+  display: flex;
+  flex-direction: column;
+  padding: 5px 0 0 20px;
+  width: 100%;
+}
+.recommendBox {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--darkergray);
+  border-radius: 15px;
+  width: 90%;
+
+  margin-bottom: 15px;
+}
+.recommendBox > .recommendTitle {
+  margin: 10px 15px 0 15px;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 15px 0 0 0;
+}
+.recommendTitle {
+  font-size: 20px;
+  font-weight: 700;
+}
+.recommendBox {
+  display: flex;
+  flex-direction: column;
+}
+.recommendBox li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+  width: 100%;
+}
+.recommendBox li:hover {
+  background-color: #24272c;
+}
+.contentMore:hover {
+  background-color: #24272c;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+#trendForMeList li > div:first-child {
+  display: flex;
+  flex-direction: column;
+}
+.contentMore {
+  padding: 10px 15px 10px 15px;
+  width: 100%;
+}
+.contentMore span {
+  cursor: pointer;
+  color: var(--darktweetblue);
+}
+.contentMoreHover:hover {
+  background-color: rgba(27, 145, 225, 0.2);
+  cursor: pointer;
+}
+#mainFooter {
+  width: 90%;
+  align-self: center;
 }
