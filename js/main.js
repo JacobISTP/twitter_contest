@@ -75,14 +75,22 @@ const formSubmitHandler = () => {
   localStorage.getItem(twitKey) !== null
     ? (twitArray = localStorage.getItem(twitKey))
     : (twitArray = "");
-  twitArray += "," + twitInput.value;
+  if (twitArray === "") {
+    twitArray += twitInput.value;
+  } else {
+    twitArray += "," + twitInput.value;
+  }
   console.log(twitArray);
   localStorage.setItem(twitKey, twitArray);
 };
 const showTwites = () => {
-  const twitGotArray = localStorage.getItem(twitKey).split(",");
+  let twitGotArray = [];
+  try {
+    twitGotArray = localStorage.getItem(twitKey).split(",");
+  } catch {}
   for (let l = 0; l < twitGotArray.length; l++) {
     let twitUser = document.createElement("i");
+    let twitContent = document.createElement("div");
     let twitUserName = document.createElement("span");
     let twitP = document.createElement("p");
     let twitDiv = document.createElement("div");
@@ -92,9 +100,19 @@ const showTwites = () => {
     twitUser.classList.add("fa-3x");
 
     twitUserName.innerText = localStorage.getItem(ID);
+    twitP.innerText = twitGotArray[l];
+
+    twitUser.style = "margin-right: 10px;";
+    twitUserName.style = "font-size: 14px;  font-weight: 600;";
+    twitP.style = " font-size: 18px; margin-left: 10px;";
+    twitContent.style = "display: flex; flex-direction: column;";
+    twitDiv.style =
+      "display: flex; background-color: var(--darkgray); border-radius: 20px; margin: 30px 20px; padding: 10px;";
 
     twitDiv.appendChild(twitUser);
-    twitDiv.appendChild(twitP);
+    twitContent.appendChild(twitUserName);
+    twitContent.appendChild(twitP);
+    twitDiv.appendChild(twitContent);
     twitted.appendChild(twitDiv);
   }
 };

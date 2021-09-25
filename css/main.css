@@ -112,6 +112,7 @@ body {
 
 /* maingrid */
 #maingrid {
+  height: 100%;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 50px 1fr;
@@ -181,11 +182,13 @@ body {
 }
 #contentgrid {
   display: grid;
+  height: 100%;
   grid-template-columns: 3fr 2fr;
   grid-template-rows: 1fr;
 }
 #contentCell1 {
   display: grid;
+  height: 100%;
   grid-template-columns: 1fr;
   grid-template-rows: 125px 1fr;
 
@@ -321,4 +324,8 @@ ul {
 #mainFooter {
   width: 90%;
   align-self: center;
+}
+#contentTweeted {
+  height: 800px;
+  overflow-y: auto;
 }
