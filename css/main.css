@@ -16,6 +16,7 @@ body {
 }
 #fathergrid > div:first-child {
   display: flex;
+  height: inherit;
   flex-direction: column;
   padding: 20px;
   justify-content: space-between;
@@ -106,8 +107,12 @@ body {
 #currentUser a:visited {
   color: var(--lightgray);
 }
-#currentUser a:hover {
+.xicon {
+  color: var(--lightgray);
+}
+.xicon:hover {
   color: tomato;
+  cursor: pointer;
 }
 
 /* maingrid */
@@ -193,6 +198,7 @@ body {
   grid-template-rows: 125px 1fr;
 
   border: 1px solid var(--darkgray);
+  border-bottom: none;
 
   background-color: var(--darkgray);
   gap: 1px;
@@ -326,6 +332,5 @@ ul {
   align-self: center;
 }
 #contentTweeted {
-  height: 800px;
   overflow-y: auto;
 }

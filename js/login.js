@@ -3,7 +3,11 @@ const loginId = document.querySelector("#login input");
 const ID = "ID";
 
 const loginHandler = (event) => {
-  localStorage.setItem(ID, loginId.value);
+  let userId = loginId.value;
+  localStorage.setItem(ID, userId);
+  if (JSON.stringify(localStorage.getItem(userId)) === "null") {
+    localStorage.setItem(`${userId}_twit`, JSON.stringify([]));
+  }
 };
 
 loginForm.addEventListener("submit", loginHandler);

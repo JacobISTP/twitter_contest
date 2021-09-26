@@ -4,6 +4,8 @@ const logout = document.querySelector("#currentUser a");
 const twitForm = document.querySelector("#contentTweet form");
 const twitInput = document.querySelector('#contentTweet input[type="text"]');
 const twitBtn = document.querySelector('#contentTweet input[type="submit"]');
+const contentTitle = document.querySelector("#contentTitle");
+const twit = document.querySelector("#contentTweet");
 const twitted = document.querySelector("#contentTweeted");
 
 const ID = "ID";
@@ -69,30 +71,38 @@ const twitHandler = () => {
     twitBtn.style = "";
   }
 };
-let twitArray = "";
 const twitKey = localStorage.getItem(ID) + "_twit";
+let twitArray = JSON.parse(localStorage.getItem(twitKey));
 const formSubmitHandler = () => {
   localStorage.getItem(twitKey) !== null
-    ? (twitArray = localStorage.getItem(twitKey))
-    : (twitArray = "");
-  if (twitArray === "") {
-    twitArray += twitInput.value;
-  } else {
-    twitArray += "," + twitInput.value;
-  }
+    ? (twitArray = JSON.parse(localStorage.getItem(twitKey)))
+    : (twitArray = []);
+
+  let twitID = Date.now();
+  let twitObject = {
+    id: twitID,
+    content: twitInput.value,
+  };
+  twitArray.push(twitObject);
   console.log(twitArray);
-  localStorage.setItem(twitKey, twitArray);
+  saveTwit();
+};
+const saveTwit = () => {
+  localStorage.setItem(twitKey, JSON.stringify(twitArray));
+};
+const removeTwit = (event) => {
+  const targetDiv = event.target.parentElement;
+  twitArray = twitArray.filter((item) => item.id !== parseInt(targetDiv.id));
+  saveTwit();
+  targetDiv.remove();
 };
 const showTwites = () => {
-  let twitGotArray = [];
-  try {
-    twitGotArray = localStorage.getItem(twitKey).split(",");
-  } catch {}
-  for (let l = 0; l < twitGotArray.length; l++) {
+  for (let l = 0; l < twitArray.length; l++) {
     let twitUser = document.createElement("i");
     let twitContent = document.createElement("div");
     let twitUserName = document.createElement("span");
     let twitP = document.createElement("p");
+    let removeIcon = document.createElement("div");
     let twitDiv = document.createElement("div");
 
     twitUser.classList.add("fas");
@@ -100,19 +110,28 @@ const showTwites = () => {
     twitUser.classList.add("fa-3x");
 
     twitUserName.innerText = localStorage.getItem(ID);
-    twitP.innerText = twitGotArray[l];
+    twitP.innerText = twitArray[l]["content"];
+
+    removeIcon.innerText = "✖";
+    removeIcon.addEventListener("click", removeTwit);
+
+    removeIcon.classList.add("xicon");
+    twitDiv.id = twitArray[l]["id"];
 
     twitUser.style = "margin-right: 10px;";
     twitUserName.style = "font-size: 14px;  font-weight: 600;";
     twitP.style = " font-size: 18px; margin-left: 10px;";
     twitContent.style = "display: flex; flex-direction: column;";
+    removeIcon.style = "position: absolute; top: 10px; right: 10px;";
     twitDiv.style =
-      "display: flex; background-color: var(--darkgray); border-radius: 20px; margin: 30px 20px; padding: 10px;";
+      "display: flex; background-color: var(--darkgray); border-radius: 20px; margin: 30px 20px; padding: 10px; position: relative;";
 
     twitDiv.appendChild(twitUser);
     twitContent.appendChild(twitUserName);
     twitContent.appendChild(twitP);
     twitDiv.appendChild(twitContent);
+    twitDiv.appendChild(removeIcon);
+
     twitted.appendChild(twitDiv);
   }
 };
@@ -199,7 +218,7 @@ for (let t = 0; t < recommendFollowArray.length; t++) {
     "height:25px; border-radius: 50%; display: flex; justify-content: center; align-items: center;";
   recommendFollowMore.classList.add("contentMoreHover");
   recommendFollowButton.style =
-    "background-color: white; font-size: 15px; font-weight: 600; padding: 5px 15px; border: none; border-radius: 30px; cursor: pointer;";
+    "background-color: white; font-size: 15px; font-weight: 600; padding: 5px 15px; border: none; border-radius: 30px; cursor: pointer; width: 75px;";
 
   recommendFollowContents.appendChild(recommendFollowImg);
   recommendFollowContentDiv.appendChild(recommendFollowContent2);
@@ -227,3 +246,11 @@ for (let f = 0; f < mainFooter_content.length; f++) {
   mainFooter_span.innerText = mainFooter_content[f];
   mainFooter.appendChild(mainFooter_span);
 }
+console.log(document.querySelector("body").clientHeight);
+console.log(contentTitle.clientHeight);
+console.log(twit.clientHeight);
+twitted.style = `height: ${
+  document.querySelector("body").clientHeight -
+  contentTitle.clientHeight -
+  twit.clientHeight
+}px;`;
